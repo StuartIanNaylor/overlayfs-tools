@@ -12,7 +12,7 @@
 #include <linux/limits.h>
 #include <stdbool.h>
 #include <sys/stat.h>
-#include <attr/xattr.h>
+#include <sys/xattr.h>
 #include <linux/stat.h>
 #include "logic.h"
 #include "sh.h"
