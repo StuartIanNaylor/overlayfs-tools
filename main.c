@@ -13,7 +13,6 @@
 #include <stdbool.h>
 #include <sys/stat.h>
 #include <sys/xattr.h>
-#include <linux/stat.h>
 #include "logic.h"
 #include "sh.h"
 
