@@ -8,7 +8,7 @@
 #include <errno.h>
 #include <unistd.h>
 #include <sys/xattr.h>
-#include <sys/attributes.h>
+#include <attr/attributes.h>
 #include <fts.h>
 #include "logic.h"
 #include "sh.h"
@@ -35,7 +35,7 @@ static inline mode_t permission_bits(const struct stat *status) { // not used ye
 int is_opaquedir(const char *path, bool *output) {
     char val;
     ssize_t res = getxattr(path, ovl_opaque_xattr, &val, 1);
-    if ((res < 0) && (errno != ENODATA)) {
+    if ((res < 0) && (errno != ENOATTR)) {
         return -1;
     }
     *output = (res == 1 && val == 'y');
